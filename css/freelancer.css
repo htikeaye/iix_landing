@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
- * Copyright 2013-2016 Start Bootstrap
+ * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
@@ -36,18 +36,43 @@ hr.star-primary {
   border: none;
   border-top: solid 5px;
   text-align: center;
-  max-width: 250px;
   margin: 25px auto 30px;
 }
 hr.star-light:after,
-hr.star-primary:after {
-  content: "\f005";
-  font-family: FontAwesome;
+hr.star-primary:before {
+  content: "\f1db";
+  font: normal normal normal 14px/0.8 FontAwesome;
   display: inline-block;
   position: relative;
-  top: -0.8em;
+  top: -0.5em;
+  left: -50%;
   font-size: 2em;
-  padding: 0 0.25em;
+  padding: 0 0;
+  border-radius: 25px;
+}
+hr.arrow-right:before {
+  content: "\f1db";
+  font: normal normal normal 14px/0.8 FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -1.25em;
+  left: -50%;
+  font-size: 2em;
+  padding: 0 0;
+  border-radius: 25px;
+  background-color: transplant;
+}
+hr.arrow-right:after {
+  content: "\f0da";
+  font: normal normal normal 14px/0.8 FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
+  left: 45%;
+  font-size: 4em;
+  padding: 0 0;
+  border-radius: 25px;
+  background-color: transplant;
 }
 hr.star-light {
   border-color: white;
@@ -60,8 +85,8 @@ hr.star-primary {
   border-color: #2C3E50;
 }
 hr.star-primary:after {
-  background-color: white;
-  color: #2C3E50;
+  background-color: yellow;
+  color: red;
 }
 .img-centered {
   margin: 0 auto;
@@ -110,6 +135,7 @@ header .intro-text .skills {
   border: none;
 }
 .navbar-custom .navbar-brand {
+  padding: 0;
   color: white;
 }
 .navbar-custom .navbar-brand:hover,
@@ -117,6 +143,15 @@ header .intro-text .skills {
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
   color: white;
+}
+.navbar-custom .navbar-brand .img {
+  display: block;
+}
+.navbar-custom .navbar-brand .caption {
+  color: darkgrey;
+  font-size: 6px;
+  display: block;
+  line-height: 0;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
@@ -141,6 +176,9 @@ header .intro-text .skills {
   color: white;
   background: #18BC9C;
 }
+.navbar-custom .navbar-nav .dropdown li a {
+  color: #333;
+}
 .navbar-custom .navbar-toggle {
   color: white;
   text-transform: uppercase;
@@ -155,7 +193,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    padding: 25px 0;
+    background: rgba(44, 62, 80, 0.8);
+    padding: 10px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;

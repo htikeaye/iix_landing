@@ -34,19 +34,46 @@ hr.star-primary {
     border: none;
     border-top: solid 5px;
     text-align: center;
-    max-width: 250px;
     margin: 25px auto 30px;
 }
 
 hr.star-light:after,
-hr.star-primary:after {
-    content: "\f005";
-    font-family: FontAwesome;
+hr.star-primary:before {
+    content: "\f1db";
+    font: normal normal normal 14px/0.8 FontAwesome;
     display: inline-block;
     position: relative;
-    top: -0.8em;
+    top: -0.5em;
+    left: -50%;
     font-size: 2em;
-    padding: 0 0.25em;
+    padding: 0 0;
+    border-radius: 25px;
+}
+
+hr.arrow-right:before {
+	content: "\f1db";
+    font: normal normal normal 14px/0.8 FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -1.25em;
+    left: -50%;
+    font-size: 2em;
+    padding: 0 0;
+    border-radius: 25px;
+    background-color: transplant;
+}
+
+hr.arrow-right:after {
+	content: "\f0da";
+    font: normal normal normal 14px/0.8 FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.5em;
+    left: 45%;
+    font-size: 4em;
+    padding: 0 0;
+    border-radius: 25px;
+    background-color: transplant;
 }
 
 hr.star-light {
@@ -63,8 +90,8 @@ hr.star-primary {
 }
 
 hr.star-primary:after {
-    background-color: white;
-    color: @theme-primary;
+    background-color: yellow;
+    color: red;
 }
 
 .img-centered {
@@ -122,12 +149,22 @@ header {
 	font-weight: 700;
 	border: none;
 	.navbar-brand {
+		padding: 0;
 		color: white;
 		&:hover,
 		&:focus,
 		&:active,
 		&.active {
 			color: white;
+		}
+		.img {
+			display: block;
+		}
+		.caption {
+			color: darkgrey;
+			font-size: 6px;
+			display: block;
+			line-height: 0;	
 		}
 	}
 	.navbar-nav {
@@ -156,6 +193,13 @@ header {
 				}
 			}
 		}
+		.dropdown {
+			li { 
+				a {
+					color: #333;
+				}
+			}
+		}
 	}
 	.navbar-toggle {
 		color: white;
@@ -173,7 +217,8 @@ header {
 
 @media(min-width:768px) {
     .navbar-custom {
-        padding: 25px 0;
+    	background: rgba(44, 62, 80, 0.8);
+        padding: 10px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
