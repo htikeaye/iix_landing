@@ -16,6 +16,10 @@ a:active,
 a.active {
   color: #f9f9f9;
 }
+.description{
+ color: #144b7c;
+ font-size: 18px;
+}
 h1,
 h2,
 h3,
