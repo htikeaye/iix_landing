@@ -4,6 +4,7 @@
 body {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	overflow-x: hidden;
+	color: @font-dark;
 }
 
 p {
@@ -24,29 +25,61 @@ a.active {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
 	font-weight: 700;
 }
-
+.star-container {
+	padding-left: 40px;
+	padding-right: 40px;
+}
 hr.star-light,
 hr.star-primary {
     padding: 0;
     border: none;
-    border-top: solid 5px;
+    border-top: solid 20px;
     text-align: center;
-    max-width: 250px;
     margin: 25px auto 30px;
 }
 
 hr.star-light:after,
-hr.star-primary:after {
-    content: "\f005";
-    font-family: FontAwesome;
+hr.star-primary:before {
+    content: "\f1db";
+    font: normal normal normal 14px/0.75 FontAwesome;
     display: inline-block;
     position: relative;
-    top: -0.8em;
-    font-size: 2em;
-    padding: 0 0.25em;
+    top: -0.55em;
+    left: -50%;
+    font-size: 5em;
+    padding: 0 0;
+    border-radius: 25px;
+    background-color: @theme-primary;
+    color: white;
+}
+
+hr.arrow-right:before {
+	content: "\f1db";
+    font: normal normal normal 14px/0.75 FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.65em;
+    left: -50%;
+    font-size: 5em;
+    padding: 0 0;
+    border-radius: 25px;
+    background-color: @theme-primary;
+    color: white;
+}
+
+hr.arrow-right:after {
+	content: "\f0da";
+    font: normal normal normal 14px/0.7 FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.5em;
+    left: 45%;
+    font-size: 6em;
+    padding: 0 0;
+    border-radius: 25px;
+    background-color: transplant;
 }
 
 hr.star-light {
@@ -70,10 +103,18 @@ hr.star-primary:after {
 .img-centered {
 	margin: 0 auto;
 }
-
+section.container {
+	padding: 80px 120px;
+	text-align: center;
+}
+p {
+	text-align: center;
+}
 header {
 	text-align: center;
-	background: @theme-success;
+	background-image: url("/img/intro.jpg");
+	//background: @theme-success;
+	height: 500px;
 	color: white;
 	.container {
 		padding-top: 100px;
@@ -114,14 +155,19 @@ header {
 		}
 	}
 }
+.affix.navbar-custom {
+	background-color: rgba(44, 62, 80, 0.5);
+}
 
 .navbar-custom {
-	background: @theme-primary;
+	background: rgba(44, 62, 80, 0);
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
 	border: none;
 	.navbar-brand {
+		height: 65px;
+		padding: 0;
 		color: white;
 		&:hover,
 		&:focus,
@@ -129,12 +175,21 @@ header {
 		&.active {
 			color: white;
 		}
+		.img {
+			display: block;
+		}
+		.caption {
+			color: darkgrey;
+			font-size: 6px;
+			display: block;
+			line-height: 0;	
+		}
 	}
 	.navbar-nav {
 		letter-spacing: 1px;
 		li {
 			a {
-				color: white;
+				color: @font-yellow;
 				&:hover {
 					color: @theme-success;
 				}
@@ -156,6 +211,13 @@ header {
 				}
 			}
 		}
+		.dropdown {
+			li { 
+				a {
+					color: @font-dark;
+				}
+			}
+		}
 	}
 	.navbar-toggle {
 		color: white;
@@ -173,7 +235,7 @@ header {
 
 @media(min-width:768px) {
     .navbar-custom {
-        padding: 25px 0;
+        padding: 10px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -200,10 +262,25 @@ section {
     }
 }
 
-section.success {
+section {
 	background: @theme-success;
-	color: white;
+	color: @font-dark;
 }
+div.lastsection {
+	background: @theme-primary;
+	overflow: hidden;
+	height: 100%;
+	padding: 10px;
+}
+div.lastsection > :first-child > p {
+
+	background-color: #436dbb;
+
+}
+div.lastsection > :last-child > p {
+		background-color: #0f3479;
+}
+
 
 @media(max-width:767px) {
 	section {
@@ -218,11 +295,17 @@ section.success {
     .portfolio-item {
         margin: 0 0 15px;
         right: 0;
+        .img-responsive {
+        	max-width: 256px;
+        	max-height: 256px;
+        	margin-bottom: 2em;
+        }
         .portfolio-link {
             display: block;
             position: relative;
             max-width: 400px;
             margin: 0 auto;
+
             .caption {
                 background: fade(@theme-success, 90%);
                 position: absolute;
@@ -485,4 +568,45 @@ footer {
 
 div#maincontent{
 	outline: none;
+	.item {
+		opacity: 0.8;
+	}
+}
+
+.donate-section {
+	color: white;
+	background-color: @theme-primary;
+	
+	overflow: hidden;
+
+	.row {
+		p {
+			padding: 20px;
+			text-align: center;
+		}
+	}
+
+	div.no-padding-left {
+		@media(min-width: 1025px) {
+			padding-left: 0;
+		}
+	}
+}
+.donate-section-item {
+	padding: 30px;
+	height: 100%;
+	margin-top: 15px;
+	background-color: #165185;
+	text-align: center;
+	img {
+		max-height: 318.06px;
+    	max-width: 494.95px;
+		width: 100%;
+	}
+	height: 650px;
+}
+.tell-me {
+	background-color: @font-yellow;
+	color: white;
+	border-color: @font-yellow;
 }
