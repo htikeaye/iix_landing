@@ -26,8 +26,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 .star-container {
   padding-left: 40px;
@@ -237,7 +237,7 @@ section h2 {
   font-size: 3em;
 }
 section {
-  background: #f9f9f9;
+  background: #ffffff;
   color: #0a0a0a;
 }
 div.lastsection {
@@ -588,7 +588,7 @@ div#maincontent {
   outline: none;
 }
 div#maincontent .item {
-  opacity: 0.8;
+  opacity: 1;
 }
 .donate-section {
   color: white;
@@ -608,7 +608,7 @@ div#maincontent .item {
   padding: 30px;
   height: 100%;
   margin-top: 15px;
-  background-color: #165185;
+  background-color: #155287;
   text-align: center;
   height: 650px;
 }
@@ -620,5 +620,8 @@ div#maincontent .item {
 .tell-me {
   background-color: #ff9d00;
   color: white;
-  border-color: #ff9d00;
+  border: 0;
+  font-weight: lighter;
+  padding: 10px;
+  border-style: none;
 }
