@@ -102,7 +102,7 @@ p {
 }
 header {
   text-align: center;
-  background-image: url("/img/intro.jpg");
+  background-image: url("../img/intro.jpg");
   height: 500px;
   color: white;
 }
